@@ -7,7 +7,8 @@ from src.utils import preprocess_customer_data
 from src.config import MODEL_PATH, DATA_PATH, MISTRAL_API_KEY
 
 def main():
-    # Load the data
+    api_key = input("Please enter your Mistral API key: ")
+    os.environ['MISTRAL_API_KEY'] = api_key
     df = pd.read_csv(DATA_PATH)
     df_processed = preprocess_customer_data(df)
     model = load_model(MODEL_PATH)
