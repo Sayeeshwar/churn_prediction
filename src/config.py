@@ -1,0 +1,3 @@
+MODEL_PATH = ""
+DATA_PATH = ""
+MISTRAL_API_KEY = ""
