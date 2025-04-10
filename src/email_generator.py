@@ -1,5 +1,3 @@
-# src/email_generator.py
-import os
 import requests
 import json
 from src.config import MISTRAL_API_ENDPOINT, MISTRAL_MODEL, TEMPERATURE, MAX_TOKENS

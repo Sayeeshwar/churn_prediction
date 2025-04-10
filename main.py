@@ -4,7 +4,7 @@ import pickle
 from src.customer_segmentation import load_model, segment_customers
 from src.email_generator import create_retention_email_prompt, generate_email
 from src.utils import preprocess_customer_data
-from src.config import MODEL_PATH, DATA_PATH, MISTRAL_API_KEY
+from src.config import MODEL_PATH, DATA_PATH
 
 def main():
     api_key = input("Please enter your Mistral API key: ")
@@ -26,7 +26,7 @@ def main():
     for i, (idx, customer) in enumerate(high_risk_customers.iloc[:5].iterrows()):
         customer_dict = customer.to_dict()
         prompt = create_retention_email_prompt(customer_dict, 'high')
-        email = generate_email(prompt, api_key=MISTRAL_API_KEY)
+        email = generate_email(prompt, api_key=api_key)
         emails[idx] = email
         print(f"Generated email for customer {idx}")
     
